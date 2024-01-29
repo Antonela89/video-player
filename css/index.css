@@ -1,0 +1,73 @@
+@import './buttons.css'; 
+/* importar una hoja de estilos de css */
+/* importacion al inicio de la hoja */
+
+:root {
+  --Primary: #26B4BC;
+  --White: #ffffff;  
+}
+/* variables de entorno */
+
+body {
+  background-color: var(--Primary);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.wrapper {
+  max-inline-size: 900px;
+  margin: auto;
+}
+/* es el contenedor padre, al ponderle un ancho fijo y no al hijo se evita el salto de escala cuando se pasa de un tamaño a otro */
+
+.player {
+  margin-block-start: 100px;
+  position: relative;
+}
+
+.player video{
+  inline-size: 100%;
+  aspect-ratio: 16/9;
+  vertical-align: middle;
+  object-fit: cover;
+}
+
+.player-title {
+  color: var(--White);
+  position: absolute;
+  inset-block-start: 0; /*en el eje y*/
+  inset-inline-start: 20px; /*en el eje x*/
+}
+
+.player-actions {
+  position: absolute;
+  display: flex; 
+  align-items: center;
+  justify-content: center;
+  inset: 0; 
+  gap: 20px;
+}
+
+.player-progress {
+  position: absolute;
+  inset-block-end:0;
+  inset-inline:0;
+  display: flex;
+  padding: 10px;
+}
+
+.player-progress input {
+  flex: 1 
+}
+
+.player-overlay {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: .3s opacity;
+}
+
+.player:hover .player-overlay{
+  opacity: 1;
+}
+
+
